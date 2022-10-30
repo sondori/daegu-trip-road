@@ -1,0 +1,894 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+*{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.nav{width: 100%; position: fixed; z-index: 9999; top:0px;}
+.nav-wrap{width: 100%; margin: 0 auto; display: flex;  justify-content: center;  padding-top: 20px;  transition: .5s;}
+.nav ul{display: flex;}
+.nav .logo img{width: 250px; margin-top: 5px; margin-right: 100px;}
+.nav ul li{ margin-top: 20px; width: 160px; text-align: center; position: relative;}
+
+
+.nav ul li::after{
+    content: "";
+    width: 80px;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    background-color: red;
+    transition: .5s;
+    transform: scaleX(0);
+}
+.nav ul li.on::after,
+.nav ul li:hover::after{
+    transform: scaleX(1);
+}
+.nav ul li a{ letter-spacing: -1.2px; font-size: 18px; text-align: center; padding: 20px; color: #000;}
+.nav ul li.on{font-weight: bold; transition: .3s;}
+/* etc 설정부분 */
+.nav .etc {width: 310px; height: 15px; margin-top: 20px; margin-left: 100px;}
+.nav .etc a{ line-height: 15px; margin-left: 10px;background-color: #faf7f7; border-radius: 15px; padding: 5px 10px; box-sizing: border-box; font-size: 15px; letter-spacing: -1.2px;}
+.nav .etc a span{
+    font-size: 18px;
+    margin-left: 8px;
+    color: red;
+}
+.nav .etc a img{width: 25px; margin-right: 10px; margin-bottom: -5px;}
+.nav .search{font-size: 30px; margin-top: 8px;}
+
+/* 탭메뉴설정 */
+.tabmenu {width: 100%;}
+.tab-wrap{width: 100%;  background-color: #fff;position: absolute; z-index: 999; top:0px;  transition: .5s;}
+.tabmenu .content {display: flex; width: 100%; height: 0px;
+border-top: 1px solid #c1c1c1; border-bottom: 1px solid #c1c1c1; margin-top: 90px; display: none;}
+.tabmenu .content.on {display: block; display: flex; width: 100%; height: 250px;}
+.tabmenu .content .title{
+    width: 400px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-right: 1px solid #c1c1c1;
+}
+.tabmenu .content .title h2{
+    text-align: center;
+    padding-top: 100px;
+    color: #aaa;
+}
+.tabmenu .content .title img{
+    position: absolute;
+    bottom: 0;
+}
+
+/* 탭메뉴 텍스트 설정 */
+.tabmenu .content .txt{ margin: 20px 50px 0 50px;}
+.tabmenu .content .txt ul li{position: relative; width: 140px; transition: .3s;}
+.tabmenu .content .a{
+    font-size: 18px;
+    border: 1px solid #c1c1c1;
+    text-align: center;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.tabmenu .content .txt ul .a.on{
+    background-color: #aaa;
+}
+
+
+
+
+.tabmenu .content .txt ul li ul li{
+    width: 200px;
+    font-weight: bold;
+    margin-left: 13px;
+}
+
+
+
+/* 풀페이지설정 */
+
+.section{overflow: hidden;}
+
+/* #fp-nav ul li .fp-tooltip.on{
+    color: #bc0707;
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: bold;
+} */
+
+#fp-nav ul li .fp-tooltip{
+    background-color: #fff;
+    color: #bc0707;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid #bc0707;
+}
+#fp-nav ul li .fp-tooltip.on{width: auto; opacity: 1;}
+#fp-nav ul li a span {background-color: #d1d1d1;}
+
+
+.banner .slideshow-container .mySlideDiv{
+    width: 100%;
+}
+
+
+/* 슬라이드텍스트 설정부분 */
+.banner .slideshow-container .mySlideDiv h1{
+    position: absolute;}
+.banner .slideshow-container .mySlideDiv:nth-child(1) h1{
+    width: 100%;
+    height: 100%;
+    top:40%; left: 30%;
+    font-weight: 100;
+    font-size: 40px;
+    color: #fff;
+}
+.banner .slideshow-container .mySlideDiv:nth-child(1) h1 span{
+    font-size: 80px;
+    font-weight: 100px;
+}
+
+.banner .slideshow-container .mySlideDiv:nth-child(2) h1{
+    width: 100%;
+    height: 100%;
+    top:40%; left: 30%;
+    font-weight: 100;
+    font-size: 40px;
+    color: #fff;
+}
+.banner .slideshow-container .mySlideDiv:nth-child(2) span{font-size: 60px;}
+
+.banner .slideshow-container .mySlideDiv:nth-child(3) h1{
+    width: 100%;
+    height: 100%;
+    top:40%; left: 35%;
+    font-weight: 100;
+    font-size: 40px;
+    color: #fff;
+}
+.banner .slideshow-container .mySlideDiv:nth-child(3) span{
+    font-size: 70px;
+}
+
+
+
+.banner .slideshow-container .mySlideDiv img{
+width: 100%;
+height: 100%;
+}
+
+  /* 슬라이드 효과css */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* 대구 12경 설정부분 */
+
+/* 타이틀 */
+.content-1 .title{
+position: absolute;
+left: 100px;
+top: 290px;
+}
+.content-1 .title h2{
+    color: #bc0707;
+    font-size: 100px;
+    margin-left: 135px;
+}
+.content-1 .title h1{
+    font-size: 80px;
+}
+.swiper{width: 1200px; margin-left: 600px; top: 70px;}
+.content2 .img {width: 500px; height: 100%; margin-top: 20px; margin-bottom: 30px; margin-left: 10px; display: flex;  flex-wrap: wrap; gap:30px; position: relative;}
+.content2 .img img{width: 350px; opacity: 0.6; transition: 0.5s; z-index: 99;}
+
+.content2 .img .content-a {position: relative;}
+
+.content2 .img .content-a:hover img{opacity: 1; transform: scale(1.05);}
+.content2 .img .content-a:hover .txt{opacity: 0;}
+
+.content2 .img .content-a .txt{z-index: 99; position: absolute; top: 140px; left: 10%; text-align: center; letter-spacing: -0.13em; transition: .5s; }
+.content2 .img .content-a .txt p:nth-child(1){
+    font-weight: 300;
+    font-size: 25px;
+}
+.content2 .img .content-a .txt p:nth-child(2){
+    font-weight: 400;
+    font-size: 35px;
+}
+
+/* 텍스트 설정부분 */
+/* slide-1 */
+.content2 .img .slide-1:nth-child(1) .txt{margin-left: 30px;}
+.content2 .img .slide-1:nth-child(2) .txt{margin-left: 15px;}
+.content2 .img .slide-1:nth-child(3) .txt{margin-left: 45px;}
+.content2 .img .slide-1:nth-child(4) .txt{margin-left: 65px;}
+.content2 .img .slide-1:nth-child(5) .txt{margin-left: 40px;}
+.content2 .img .slide-1:nth-child(6) .txt{margin-left: 70px;}
+
+/* slide-2 */
+.content2 .img .slide-2:nth-child(1) .txt{margin-left: 60px;}
+.content2 .img .slide-2:nth-child(2) .txt{margin-left: 80px;}
+.content2 .img .slide-2:nth-child(3) .txt{margin-left: 45px;}
+.content2 .img .slide-2:nth-child(4) .txt{margin-left: 50px;}
+.content2 .img .slide-2:nth-child(6) .txt{margin-left: 60px;}
+
+
+    /* 스와이퍼부분 */
+.swiper-button-next,
+.swiper-button-prev{
+    color: #000;
+}
+.swiper-button-next{right: 100px; top: 600px;}
+.swiper-button-prev{left: 530px; top: 600px;}
+
+
+
+/* 대구맛집지도부분 */
+.food{width: 100%;}
+.food .title{width: 500px; height: 200px; margin-top: 130px; letter-spacing: -5px;  text-align: center;}
+.food .title h2{font-size: 76px; color: #bc0707;}
+.food .title p{font-size: 46px; margin-bottom: -25px;}
+.food #img{
+    margin-left: 150px;
+}
+
+/* 맛집지도 텍스트박스 */
+
+.food .food-map .content-box{
+    position: absolute;
+    width: 700px;
+    height: 680px;
+    background-color: #f3f3f3;
+    border-radius: 0px 360px 0px 0px ;
+    right: 200px;
+    top: 280px;
+}
+.food .content-box .content-txt{
+    width: 100%;
+    height: 500px;
+}
+
+.food .content-box .content-txt h1{
+    font-size: 40px; text-align: center; line-height: 20px;
+    background-color: rgba(225,0,0,0.2);
+    width: 400px;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+.food .content-box .content-txt .img{
+display: flex; gap: 10px;
+}
+.food .content-box .content-txt .img img{
+    width: 200px; margin-top: 80px;
+    margin-left: 15px;
+}
+.food .content-box .content-txt .title-box{ 
+    width: 600px;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+.food .content-box .content-txt .title-box p{
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: -1px;
+}
+/* 주소박스설정 */
+.food-map .content-box .bottom-box{
+    width: 100%; height: 30px;
+    background-color: #d4d4d4;
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* 동구텍스트 설정 */
+.food .content-box .content-txt .donggu p:nth-child(2),.food .content-box .content-txt .donggu p:nth-child(3),.food .content-box .content-txt .donggu p:nth-child(1){
+    margin-bottom: 20px;
+}
+
+/* 북구텍스트 설정 */
+.food .content-box .bukgu p:nth-child(1),.food .content-box .bukgu p:nth-child(3){
+    margin-bottom: 20px;
+}
+.food .content-box .content-txt .bukgu{margin-top: 100px;}
+/* 서구텍스트 설정 */
+.food .content-box .content-txt .seogu{margin-top: 100px;}
+.food .content-box .seogu p:nth-child(1),.food .content-box .seogu p:nth-child(3){margin-bottom: 20px;}
+/* 중구텍스트 설정 */
+.food .content-box .content-txt .junggu {margin-top: 100px;}
+.food .content-box .junggu p:nth-child(2),.food .content-box .junggu p:nth-child(3),.food .content-box .junggu p:nth-child(5){
+    margin-bottom: 20px;
+}
+/* 달성군-부곡리 먹거리촌 텍스트 설정 */
+.food .content-box .content-txt .dalseonggun {margin-top: 80px;}
+.food .content-box .dalseonggun p:nth-child(3),.food .content-box .dalseonggun p:nth-child(5){
+    margin-bottom: 20px;
+}
+
+/* 달성군-가창찐빵 텍스트설정 */
+.food .content-box .content-txt .dalseonggun2 {margin-top: 80px;}
+.food .content-box .dalseonggun2 p:nth-child(1),.food .content-box .dalseonggun2 p:nth-child(4),.food .content-box .dalseonggun2 p:nth-child(6){
+    margin-bottom: 20px;
+}
+
+/* 달서구- 상인동술골 텍스트 */
+.food .content-box .content-txt .dalseogu {margin-top: 80px;}
+.food .content-box .dalseogu p:nth-child(1),.food .content-box .dalseogu p:nth-child(3),.food .content-box .dalseogu p:nth-child(4){
+    margin-bottom: 20px;
+}
+
+/* 남구 - 안지랑곱창골목 텍스트 */
+.food .content-box .content-txt .namgu {margin-top: 80px;}
+.food .content-box .namgu p:nth-child(1),.food .content-box .namgu p:nth-child(3),.food .content-box .namgu p:nth-child(4){
+    margin-bottom: 20px;
+}
+
+/* 수성구 - 들안길먹자골목 텍스트 */
+.food .content-box .content-txt .suseonggu {margin-top: 80px;}
+.food .content-box .suseonggu p:nth-child(1),.food .content-box .suseonggu p:nth-child(4),.food .content-box .suseonggu p:nth-child(6){
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.daegu{width: 100%; height: 100%;}
+/* 타이틀 설정부분 */
+.daegu .daegu-title{
+    width: 500px;
+    color: #fff;
+    margin-left: 10px;
+    margin-top: -100px;
+}
+.daegu .daegu-title p{
+    font-size: 50px;
+    text-align: center;
+}
+.daegu .daegu-title p:nth-child(1){
+    letter-spacing: -5px;
+}
+.daegu .daegu-title h1{
+    font-size: 80px;
+    text-align: center;
+}
+.daegu .daegu-title span{
+    color: #ff0000;
+}
+.daegu .daegu-title p span{
+    padding: 10px 0px;
+    color: #fff;
+    position: relative;
+}
+.daegu .daegu-title p span::after{
+    content: "";
+    position: absolute;
+    width: 10px; height: 10px;
+    background-color: #ff0000;
+    border-radius: 100%;
+    left: 20px;
+}
+
+/* 메뉴설정부분 */
+
+.daegu-menu{width: 500px; padding-top: 100px; margin-top: 50px; margin-left: 50px;}
+.daegu .daegu-menu ul li{margin-bottom: 20px; position: relative;}
+.daegu .daegu-menu ul li a{
+    color: #fff;
+    font-size: 25px;
+    padding: 50px;
+    letter-spacing: -2px;
+    position: relative;
+    z-index: 2;
+
+}
+.daegu .daegu-menu ul li a::after
+{
+    content: "";
+    width: 0px;
+    height: 20px;
+    position: absolute;
+    background-color: #bc0707;
+    bottom: 45px;
+    left: 50px;
+    transition: .8s;
+    z-index: -1;
+
+}
+.daegu .daegu-menu ul li.on a::after,
+.daegu .daegu-menu ul li a:hover::after
+{
+    width: 343px;
+}
+.daegu .daegu-menu ul li:nth-child(2) span{
+    padding-left: 15px;
+}
+.daegu .daegu-menu ul li a span{
+    font-size: 50px;
+}
+
+/* 이미지 설정부분 */
+.daegu .festival-wrap{
+    width: 1200px;
+    display: flex;
+    position: absolute;
+    left: 400px;
+    top: 160px;
+    margin-left: 200px;
+    gap: 20px;
+    align-items: center;}
+.daegu .festival{display: none;}
+.daegu .festival.on{display: block;}
+.daegu .festival .festival-content{
+    position: relative;
+}
+
+.daegu .festival .festival-content img{
+    opacity: 0.6;
+    width: 400px;
+    transition: .5s;
+}
+.daegu .festival .festival-content:hover img{opacity: 1; transform: scale(1.01);}
+/* 이미지 텍스트 설정부분 */
+.daegu .festival-wrap .festival-content p
+{
+    position: absolute;
+    font-size: 20px;
+    z-index: 999;
+    color: #fff;
+    top: 40%;
+    left: 70px;
+    font-size: 30px;
+}
+.daegu .festival-wrap .festival-content h2{
+    position: absolute;
+    font-size: 20px;
+    z-index: 99;
+    color: #fff;
+    top: 45%;
+    left: 80px;
+    font-size: 45px;
+}
+.daegu .second .festival-wrap .festival-content:nth-child(2) p{left: 100px;;}
+.daegu .second .festival-wrap .festival-content:nth-child(2) h2{font-size: 45px;left: 50px;}
+.daegu .second .festival-wrap .festival-content:nth-child(3) p{left: 110px;}
+.daegu .second .festival-wrap .festival-content:nth-child(3) h2{font-size: 45px;left: 45px;}
+
+.daegu .first .festival-content:nth-child(1) h2{left: 100px;}
+.daegu .first .festival-content:nth-child(2) p{left: 90px;}
+.daegu .first .festival-content:nth-child(2) h2{left: 130px;}
+.daegu .first .festival-content:nth-child(3) p{left: 80px;}
+.daegu .first .festival-content:nth-child(3) h2{left: 30px;}
+
+
+
+/* 관광서비스부분 */
+.service{width: 100%; height: 100%;}
+.service .service-txt{text-align: center; margin-top: 200px; margin-bottom: 150px;}
+.service .service-txt h1 span{font-size: 50px; color: #bc0707;}
+.service .service-img img{margin-left: 50px;margin-bottom: 250px;}
+
+.service .footer{width: 100%; height: 250px; background-color: #000;}
+.service .footer .footer-wrap{width: 1200px; margin: 0 auto; margin-top: 10px;}
+.service .footer .footer-top{color: #fff; text-align: center;position: relative;}
+.service .footer .footer-top span{position: relative; margin-left: 5px; color: #4a4a4a; font-weight: 500;}
+.service .footer .footer-top span:not(:nth-child(1)):after{content: "";position: absolute; width: 1px; height: 16px; left: -2px; bottom: 2px; background-color: #4a4a4a;}
+.service .footer .footer-bottom{width: 100%; display: flex; margin-top: 30px;}
+.service .footer .footer-bottom .f-logo img{width: 250px;}
+.service .footer .footer-bottom .f-txt{width: 1200px; font-size: 16px; margin-left: 20px; color: #4a4a4a; margin-top: 12px; letter-spacing: -1px; font-weight: 500;}
+
+/* 반응형설정부분 - 태블릿 */
+
+@media screen and (max-width:1200px) {
+.nav{ max-width: 1200px; position: fixed; z-index: 9999; top:0px;}
+.nav-wrap{width: 100%; margin: 0 auto; display: flex;   padding-top: 20px;  transition: .5s;}
+.nav ul{display: flex;}
+.nav .logo img{width: 200px; margin-top: 5px; margin-right: 50px;}
+.nav ul li{ margin-top: 20px; text-align: center; position: relative;}
+
+.nav .etc {display: none;}
+
+
+
+
+.tabmenu {max-width: 1200px;}
+.tabmenu-first .tab-wrap .txt{
+    width: 80px;
+    flex-wrap: wrap;
+    margin-left: 0px;
+}
+
+.tab-wrap{width: 100%;  background-color: #fff;position: absolute; z-index: 999; top:0px;}
+.tabmenu .content {display: flex; width: 30px; height: 0px;
+border-top: 1px solid #c1c1c1; border-bottom: 1px solid #c1c1c1; margin-top: 90px; display: none;}
+.tabmenu .content.on {display: block; display: flex; width: 100%; height: 250px;}
+.tabmenu .content .title{
+    max-width: 1200px;
+    width: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-right: 1px solid #c1c1c1;
+}
+.tabmenu .content .title h2{
+    text-align: center;
+    padding-top: 100px;
+    color: #aaa;
+    font-size: 20px;
+}
+.tabmenu .content .title img{
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+}
+
+/* 탭메뉴 텍스트 설정 */
+.tabmenu .content .txt{ margin: 10px 50px 0 40px;}
+.tabmenu .content .txt ul li{position: relative; width: 150px; transition: .3s;}
+.tabmenu .content .a{
+    font-size: 15px;
+    border: 1px solid #c1c1c1;
+    text-align: center;
+    padding: 3px 0px;
+    margin-bottom: 10px;
+}
+
+.tabmenu .content .txt ul .a.on{
+    background-color: #aaa;
+}
+
+
+
+/* .tabmenu .content .txt ul li ul li{
+    width: 100px;
+    font-weight: bold;
+    margin-left: 13px;
+
+} */
+
+
+/* 배너설정부분 */
+.banner .slideshow-container .mySlideDiv{
+    width: 100%;
+    height: 100%;
+}
+.banner .slideshow-container .mySlideDiv h1{
+    position: absolute;}
+.banner .slideshow-container .mySlideDiv:nth-child(1) h1{
+    width: 100%;
+    height: 100%;
+    top:40%; left: 25%;
+    font-weight: 100;
+    font-size: 30px;
+    color: #fff;
+}
+.banner .slideshow-container .mySlideDiv:nth-child(1) h1 span{
+    font-size: 60px;
+    font-weight: 100px;
+}
+
+.banner .slideshow-container .mySlideDiv:nth-child(2) h1{
+    width: 100%;
+    height: 100%;
+    top:45%; left: 25%;
+    font-weight: 100;
+    font-size: 30px;
+    color: #fff;
+}
+.banner .slideshow-container .mySlideDiv:nth-child(2) span{font-size: 50px;}
+
+.banner .slideshow-container .mySlideDiv:nth-child(3) h1{
+    width: 100%;
+    height: 100%;
+    top:40%; left: 30%;
+    font-weight: 100;
+    font-size: 30px;
+    color: #fff;
+}
+.banner .slideshow-container .mySlideDiv:nth-child(3) span{
+    font-size: 60px;
+}
+.content-1 {max-width: 1200px; height: 100%;}
+.content-1 .title{
+    position: absolute;
+    left: 50px;
+    top: 290px;
+    }
+    .content-1 .title h2{
+        color: #bc0707;
+        font-size: 60px;
+        margin-left: 100px;
+    }
+    .content-1 .title h1{
+        font-size: 50px;
+    }
+    .swiper{width: 700px; margin-left: 400px; top: 70px;}
+    .content2 .img {width: 500px; height: auto; margin-top: 80px; margin-bottom: 30px; margin-left: 30px; display: flex;  flex-wrap: wrap; gap:30px; position: relative; flex-basis: 95%;}
+    .content2 .img img{width:200px; opacity: 0.6; transition: 0.5s; z-index: 99; }
+    
+    .content2 .img .content-a {position: relative;}
+    
+    .content2 .img .content-a:hover img{opacity: 1; transform: scale(1.05);}
+    .content2 .img .content-a:hover .txt{opacity: 0;}
+    
+    .content2 .img .content-a .txt{z-index: 99; position: absolute; top: 140px; left: 10%; text-align: center; letter-spacing: -0.13em; transition: .5s; }
+    .content2 .img .content-a .txt p:nth-child(1){
+        font-weight: 300;
+        font-size: 20px;
+    }
+    .content2 .img .content-a .txt p:nth-child(2){
+        font-weight: 400;
+        font-size: 25px;
+    }
+    
+    /* 텍스트 설정부분 */
+    /* slide-1 */
+    .content2 .img .slide-1:nth-child(1) .txt{ margin-top: -50px; margin-left: -5px;}
+    .content2 .img .slide-1:nth-child(2) .txt{margin-top: -50px; margin-left: -5px;}
+    .content2 .img .slide-1:nth-child(3) .txt{margin-top: -50px; margin-left: 15px;}
+    .content2 .img .slide-1:nth-child(4) .txt{margin-top: -50px; margin-left: 25px;}
+    .content2 .img .slide-1:nth-child(5) .txt{margin-top: -50px; margin-left: 9px;}
+    .content2 .img .slide-1:nth-child(6) .txt{margin-top: -50px;margin-left: 35px;}
+    
+    /* slide-2 */
+    .content2 .img .slide-2:nth-child(1) .txt{margin-top: -50px;margin-left: 25px;}
+    .content2 .img .slide-2:nth-child(2) .txt{margin-top: -50px; margin-left: 35px;}
+    .content2 .img .slide-2:nth-child(3) .txt{margin-top: -50px; margin-left: 20px;}
+    .content2 .img .slide-2:nth-child(4) .txt{margin-top: -55px; margin-left: 20px;}
+    .content2 .img .slide-2:nth-child(5) .txt{margin-top: -50px; margin-left: -25px; font-size: 10px;}
+    .content2 .img .slide-2:nth-child(6) .txt{margin-top: -50px; margin-left: 20px;}
+    
+    
+        /* 스와이퍼부분 */
+    .swiper-button-next,
+    .swiper-button-prev{
+        color: #000;
+    }
+    .swiper-button-next{right: 60px; top: 410px;}
+    .swiper-button-prev{left: 360px; top: 410px;}
+
+    .food{width: 100%;}
+    .food .title{width: 500px; height: 200px; margin-top: 130px; letter-spacing: -5px;  text-align: center;}
+    .food .title h2{font-size: 76px; color: #bc0707;}
+    .food .title p{font-size: 46px; margin-bottom: -25px;}
+
+.food{max-width: 1200px;}
+.food .title{width: 500px; height: 200px; margin-top: 130px; letter-spacing: -5px;  text-align: center;}
+.food .title h2{font-size: 40px; color: #bc0707;}
+.food .title p{font-size: 30px; margin-bottom: 5px;}
+.food #img{
+    margin-left: 150px;
+    margin-top: -90px;
+}
+    
+    /* 맛집지도 텍스트박스 */
+
+
+
+
+    .food .content-food img{width: 300px;}
+    .food .food-map .content-box{
+        position: absolute;
+        width: 500px;
+        height: 430px;
+        background-color: #f3f3f3;
+        border-radius: 0px 200px 0px 0px ;
+        right: 100px;
+        top: 170px;
+    }
+    .food .content-box .content-txt{
+        width: 100%;
+    }
+    
+    .food .content-box .content-txt h1{
+        font-size: 30px; text-align: center; line-height: 20px;
+        background-color: rgba(225,0,0,0.2);
+        width: 300px;
+        margin-top: 20px;
+        margin-left: 80px;
+    }
+    .food .content-box .content-txt .img{
+    display: flex; gap: 10px; 
+    }
+    .food .content-box .content-txt .img img{
+        width: 150px; margin-top: 50px;
+        margin-left: 15px;
+    }
+    .food .content-box .content-txt .title-box{ 
+        width: 470px;
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+    .food .content-box .content-txt .title-box p{
+        font-size: 15px;
+    }
+.food .food-map .content-box .bottom-box{
+        width: 100%; 
+        background-color: #d4d4d4;
+        text-align: center;
+        margin-top:-90px;
+        line-height: 25px;
+    }
+    .food .content-box .content-txt .title-box{margin-top: 30px;}
+
+    .food-map .content-box .bottom-box{
+        width: 100%; height: 30px;
+        background-color: #d4d4d4;
+        text-align: center;
+        margin-top: 120px;
+    }
+
+
+
+
+    /* 파워풀대구 */
+
+.daegu{max-width: 1200px; height: 100%;}
+/* 타이틀 설정부분 */
+.daegu .daegu-title{
+    width: 300px;
+    color: #fff;
+    margin-left: 50px;
+    /* margin-top: 40px; */
+}
+.daegu .daegu-title p{
+    font-size: 40px;
+    text-align: center;
+}
+.daegu .daegu-title p:nth-child(1){
+    letter-spacing: -5px;
+}
+.daegu .daegu-title h1{
+    font-size: 55px;
+    text-align: center;
+}
+.daegu .daegu-title span{
+    color: #ff0000;
+}
+.daegu .daegu-title p span{
+    padding: 10px 0px;
+    color: #fff;
+    position: relative;
+}
+.daegu .daegu-title p span::after{
+    content: "";
+    position: absolute;
+    width: 8px; height: 8px;
+    background-color: #ff0000;
+    border-radius: 100%;
+    left: 10px;
+}
+
+/* 메뉴설정부분 */
+
+.daegu-menu{width: 360px; margin-top: 5px; margin-left: 30px;}
+.daegu .daegu-menu ul li{margin-bottom: 20px; position: relative;}
+.daegu .daegu-menu ul li a{
+    color: #fff;
+    font-size: 20px;
+    padding: 50px;
+    letter-spacing: -2px;
+    position: relative;
+    z-index: 2;
+
+}
+.daegu .daegu-menu ul li a::after
+{
+    content: "";
+    width: 0px;
+    height: 13px;
+    position: absolute;
+    background-color: #bc0707;
+    bottom: 45px;
+    left: 50px;
+    transition: .8s;
+    z-index: -1;
+
+}
+.daegu .daegu-menu ul li.on a::after,
+.daegu .daegu-menu ul li a:hover::after
+{
+    width: 250px;
+}
+.daegu .daegu-menu ul li:nth-child(2) span{
+    padding-left: 15px;
+}
+.daegu .daegu-menu ul li a span{
+    font-size: 35px;
+}
+
+/* 이미지 설정부분 */
+.daegu .festival-wrap{
+    max-width: 1200px;
+    display: flex;
+    position: absolute;
+    left: 200px;
+    top: 160px;
+    margin-left: 200px;
+    gap: 20px;
+    align-items: center;}
+.daegu .festival{display: none;}
+.daegu .festival .festival-content{
+    position: relative;
+}
+
+.daegu .festival .festival-content img{
+    opacity: 0.6;
+    width: 230px;
+    transition: .5s;
+}
+.daegu .festival .festival-content:hover img{opacity: 1; transform: scale(1.01);}
+/* 이미지 텍스트 설정부분 */
+.daegu .festival-wrap .festival-content p
+{
+    position: absolute;
+    font-size: 20px;
+    z-index: 999;
+    color: #fff;
+    top: 40%;
+    left: 25px;
+    font-size: 20px;
+}
+.daegu .festival-wrap .festival-content h2{
+    position: absolute;
+    font-size: 16px;
+    z-index: 99;
+    color: #fff;
+    top: 45%;
+    left: 30px;
+    font-size: 30px;
+}
+.daegu .second .festival-wrap .festival-content:nth-child(2) p{left: 50px;}
+.daegu .second .festival-wrap .festival-content:nth-child(2) h2{left: 13px; font-size: 30px;}
+.daegu .second .festival-wrap .festival-content:nth-child(3) p{left: 80px;}
+.daegu .second .festival-wrap .festival-content:nth-child(3) h2{font-size: 30px;left: 10px;}
+
+.daegu .first .festival-content:nth-child(1) h2{left: 50px;}
+.daegu .first .festival-content:nth-child(1) p{left: 30px;}
+.daegu .first .festival-content:nth-child(2) p{left: 40px;}
+.daegu .first .festival-content:nth-child(2) h2{left: 65px;}
+.daegu .first .festival-content:nth-child(3) p{left: 40px;}
+.daegu .first .festival-content:nth-child(3) h2{left: 0px;font-size: 25px;}
+
+
+/* 관광서비스부분 */
+.service{max-width: 1200px; height: 100%;}
+.service .service-txt{text-align: center; margin-top: 100px;}
+.service-img{max-width: 1200px; height: auto; display: flex; margin-left: 50px;}
+.service-img img{width: 300px;}
+.service .footer{width: 100%; height: 200px; background-color: #000;
+    margin-top: -150px;
+}
+/* 푸터 */
+.service .footer .footer-bottom{width: 100%; display: flex; margin-top: 30px;}
+.service .footer .footer-wrap{width: 1000px; margin: 0 auto;}
+.service .footer .footer-bottom .f-logo img{width: 200px;}
+.service .footer .footer-bottom .f-txt{width: 1200px; font-size: 13.5px; margin-left: 20px; color: #4a4a4a; margin-top: 9px; letter-spacing: -1px; font-weight: 500;}
+
+
+
+}
