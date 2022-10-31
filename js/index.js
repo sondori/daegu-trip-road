@@ -27,7 +27,7 @@ $(window).on("load",function () {
 
                 $(".nav .nav-wrap ul").mouseover(function(){
                     $(".nav .nav-wrap ul li a").css("color","#000")
-                    $(".nav .logo a img").attr("src","..image/logo.png")
+                    $(".nav .logo a img").attr("src","image/logo.png")
                 })
                 $(".nav .nav-wrap ul").mouseout(function(){
                     $(".nav .nav-wrap ul li a").css("color","#fff")
